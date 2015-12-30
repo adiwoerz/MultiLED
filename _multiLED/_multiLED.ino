@@ -45,7 +45,7 @@ LED VU meter for Arduino and Adafruit NeoPixel LEDs.
 #define PEAK_HANG 2 //Time of pause before peak dot falls
 #define PEAK_FALL 1 //Rate of falling peak dot
 #define INPUT_FLOOR 10 //Lower range of analogRead input
-#define INPUT_CEILING 200 //Max range of analogRead input, the lower the value the more sensitive (1023 = max)
+#define INPUT_CEILING 100 //Max range of analogRead input, the lower the value the more sensitive (1023 = max)
 
 
 
@@ -113,21 +113,16 @@ void loop()
 
   //Fill the strip with rainbow gradient
   
-  for (int i=0;i<=strip1.numPixels()-1;i++)
-
-
-  
-  {
-    strip1.setPixelColor(i,Wheel(map(i,0,strip1.numPixels()-1,30,255)));
-      for (int i=0;i<=strip2.numPixels()-1;i++)
-   //{
-    //strip2.setPixelColor(i,Wheel(map(i,0,strip2.numPixels()-1,30,255)));
-
-      //for (int i=0;i<=strip3.numPixels()-1;i++)
-   // {
-    strip3.setPixelColor(i,Wheel(map(i,0,strip3.numPixels()-1,30,255)));
+ //for (int i=0;i<=strip1.numPixels()-1;i++)
+ //for (int i=0;i<=strip2.numPixels()-1;i++)
+ //for (int i=0;i<=strip3.numPixels()-1;i++)
+{
+  //strip1.setPixelColor(i,Wheel(map(i,0,strip1.numPixels()-1,30,255)));
+ // strip2.setPixelColor(i,Wheel(map(i,0,strip2.numPixels()-1,30,255)));
+  //strip3.setPixelColor(i,Wheel(map(i,0,strip3.numPixels()-1,30,255)));
+      
   }
-
+ 
 
   //Scale the input logarithmically instead of linearly
   c = fscale(INPUT_FLOOR, INPUT_CEILING, strip1.numPixels(), 0, peakToPeak, 2);
