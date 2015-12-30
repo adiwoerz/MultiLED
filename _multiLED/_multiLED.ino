@@ -120,15 +120,14 @@ void loop()
   {
     strip1.setPixelColor(i,Wheel(map(i,0,strip1.numPixels()-1,30,255)));
       for (int i=0;i<=strip2.numPixels()-1;i++)
-   {
-    strip2.setPixelColor(i,Wheel(map(i,0,strip2.numPixels()-1,30,255)));
+   //{
+    //strip2.setPixelColor(i,Wheel(map(i,0,strip2.numPixels()-1,30,255)));
 
       //for (int i=0;i<=strip3.numPixels()-1;i++)
-    {
+   // {
     strip3.setPixelColor(i,Wheel(map(i,0,strip3.numPixels()-1,30,255)));
   }
- }
-  }
+
 
   //Scale the input logarithmically instead of linearly
   c = fscale(INPUT_FLOOR, INPUT_CEILING, strip1.numPixels(), 0, peakToPeak, 2);
